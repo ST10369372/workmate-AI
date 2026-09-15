@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WorkMate AI | Workplace Productivity Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast"></div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✦</div><div><b>WorkMate AI</b><small>Workplace Co-Pilot</small></div></div>
+  <div class="mode"><span class="dot"></span> Local AI Demo</div>
+  <nav>
+    <button class="nav active" data-page="home">⌂ <span>Dashboard</span></button>
+    <button class="nav" data-page="email">✉ <span>Email Generator</span></button>
+    <button class="nav" data-page="meeting">▣ <span>Meeting Summarizer</span></button>
+    <button class="nav" data-page="tasks">✓ <span>Task Planner</span></button>
+    <button class="nav" data-page="research">⌕ <span>Research Assistant</span></button>
+    <button class="nav" data-page="chat">◉ <span>AI Chatbot</span></button>
+    <button class="nav" data-page="prompts">⌘ <span>Prompt Lab</span></button>
+    <button class="nav" data-page="responsible">⚖ <span>Responsible AI</span></button>
+    <button class="nav" data-page="project">▤ <span>Project & Docs</span></button>
+  </nav>
+  <div class="side-bottom"><span>CAPACITI</span><small>AI Skill Accelerator Project</small></div>
+</aside>
+
+<main>
+<header class="top">
+  <div><p class="kicker">AI-POWERED WORKPLACE PRODUCTIVITY</p><h1 id="heading">Good morning 👋</h1></div>
+  <div class="top-actions"><button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button><div class="user">WM</div></div>
+</header>
+
+<section class="page active" id="home">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="tag">WORKMATE AI</span>
+      <h2>Get more done.<br><em>Work smarter.</em></h2>
+      <p>One practical assistant for emails, meetings, tasks, research and workplace questions. Built as a functional CAPACITI project prototype.</p>
+      <div class="hero-buttons"><button class="btn primary" data-open="email">Create an email →</button><button class="btn secondary" data-open="chat">Ask WorkMate</button></div>
+    </div>
+    <div class="hero-art"><div class="orb">✦</div><div class="orbit o1"></div><div class="orbit o2"></div></div>
+  </div>
+  <div class="metrics">
+    <div><strong>05</strong><span>Productivity tools</span></div><div><strong>24/7</strong><span>Assistant access</span></div><div><strong>AI</strong><span>Prompt-powered workflows</span></div><div><strong>✓</strong><span>Human validation built in</span></div>
+  </div>
+  <div class="section-title"><div><h2>Productivity toolkit</h2><p>Choose a workflow and start working.</p></div></div>
+  <div class="cards">
+    <article data-open="email"><i>✉</i><h3>Smart Email Generator</h3><p>Professional emails tailored by audience, purpose and tone.</p><b>Open tool →</b></article>
+    <article data-open="meeting"><i>▣</i><h3>Meeting Summarizer</h3><p>Extract summaries, decisions, actions, owners and deadlines.</p><b>Open tool →</b></article>
+    <article data-open="tasks"><i>✓</i><h3>AI Task Planner</h3><p>Turn a messy task list into a prioritized daily or weekly plan.</p><b>Open tool →</b></article>
+    <article data-open="research"><i>⌕</i><h3>Research Assistant</h3><p>Get plain-language insights and recommendations from text or topics.</p><b>Open tool →</b></article>
+    <article data-open="chat"><i>◉</i><h3>AI Workplace Chatbot</h3><p>Ask questions and get contextual workplace assistance.</p><b>Open tool →</b></article>
+    <article data-open="prompts"><i>⌘</i><h3>Prompt Lab</h3><p>Demonstrate structured prompting and prompt refinement.</p><b>Open lab →</b></article>
+  </div>
+</section>
+
+<section class="page" id="email">
+  <div class="page-head"><span class="tag">TOOL 01</span><h2>Smart Email Generator</h2><p>Create polished workplace emails in seconds.</p></div>
+  <div class="two-col"><div class="box">
+    <div class="field"><label>Audience</label><select id="aud"><option>Manager</option><option>Client</option><option>Team</option><option>Colleague</option></select></div>
+    <div class="field"><label>Tone</label><select id="tone"><option>Formal</option><option>Informal</option><option>Persuasive</option></select></div>
+    <div class="field"><label>Purpose / context</label><textarea id="emailCtx" placeholder="Example: Request a 2-day deadline extension because a supplier dependency was delayed."></textarea></div>
+    <button class="btn primary full" id="makeEmail">Generate professional email</button>
+  </div><div class="box result-box"><div class="result-top"><h3>Generated email</h3><button class="mini" data-copy="emailResult">Copy</button><button class="mini notion-save" data-target="emailResult" data-kind="email">Save to Notion</button></div><div id="emailResult" class="output empty">Your generated email will appear here.</div></div></div>
+</section>
+
+<section class="page" id="meeting">
+  <div class="page-head"><span class="tag">TOOL 02</span><h2>Meeting Notes Summarizer</h2><p>Turn unstructured notes into an actionable meeting brief.</p></div>
+  <div class="two-col"><div class="box"><div class="field"><label>Paste meeting notes</label><textarea id="meetingIn" placeholder="Example: Marketing sync. Thandi will update campaign assets by Friday. Sipho said the client approved the budget. Next meeting Tuesday at 10. John to send analytics..."></textarea></div><button class="btn primary full" id="makeMeeting">Summarize meeting</button></div><div class="box result-box"><div class="result-top"><h3>Meeting intelligence</h3><button class="mini" data-copy="meetingResult">Copy</button><button class="mini notion-save" data-target="meetingResult" data-kind="meeting">Save to Notion</button></div><div id="meetingResult" class="output empty">Your summary will appear here.</div></div></div>
+</section>
+
+<section class="page" id="tasks">
+  <div class="page-head"><span class="tag">TOOL 03</span><h2>AI Task Planner</h2><p>Prioritize your workload and create a realistic schedule.</p></div>
+  <div class="two-col"><div class="box"><div class="field"><label>Tasks (one per line)</label><textarea id="tasksIn" placeholder="Finish client report - due today&#10;Reply to manager - due today&#10;Prepare Friday presentation&#10;Review team document&#10;Book project meeting"></textarea></div><div class="field"><label>Planning horizon</label><select id="horizon"><option>Today</option><option>This week</option></select></div><button class="btn primary full" id="makePlan">Build priority plan</button></div><div class="box result-box"><div class="result-top"><h3>My priority plan</h3><button class="mini" data-copy="taskResult">Copy</button><button class="mini notion-save" data-target="taskResult" data-kind="tasks">Save to Notion</button></div><div id="taskResult" class="output empty">Your optimized plan will appear here.</div></div></div>
+</section>
+
+<section class="page" id="research">
+  <div class="page-head"><span class="tag">TOOL 04</span><h2>AI Research Assistant</h2><p>Make complex information easier to understand and act on.</p></div>
+  <div class="two-col"><div class="box"><div class="field"><label>Topic or source text</label><textarea id="researchIn" placeholder="Example: Explain how generative AI can improve productivity in small businesses..."></textarea></div><div class="field"><label>Response type</label><select id="researchType"><option>Executive summary</option><option>Simple explanation</option><option>Insights & recommendations</option></select></div><button class="btn primary full" id="makeResearch">Analyze research</button><div style="display:flex;gap:8px;margin-top:8px"><input id="notionSearch" placeholder="Search your Notion workspace..." style="flex:1;padding:10px"><button class="btn" id="searchNotion">Search Notion</button></div><div id="notionResults" class="output" style="margin-top:8px;display:none"></div></div><div class="box result-box"><div class="result-top"><h3>Research brief</h3><button class="mini" data-copy="researchResult">Copy</button><button class="mini notion-save" data-target="researchResult" data-kind="research">Save to Notion</button></div><div id="researchResult" class="output empty">Your research brief will appear here.</div></div></div>
+</section>
+
+<section class="page" id="chat">
+  <div class="page-head"><span class="tag">TOOL 05</span><h2>AI Workplace Chatbot</h2><p>A conversational assistant for everyday workplace tasks.</p></div>
+  <div class="chatbox box"><div id="messages" class="messages"><div class="bubble bot"><b>WorkMate AI</b><br>Hi! I can help with emails, meetings, tasks, research and workplace ideas. What would you like to do?</div></div><div class="quick"><button data-q="Help me write a professional email">Write email</button><button data-q="How should I prioritize my tasks?">Prioritize tasks</button><button data-q="How do I summarize a meeting?">Meeting summary</button><button data-q="Explain prompt engineering">Explain prompting</button></div><div class="chatbar"><input id="chatIn" placeholder="Ask WorkMate AI..."><button class="btn primary" id="send">Send</button></div></div>
+</section>
+
+<section class="page" id="prompts">
+  <div class="page-head"><span class="tag">PROMPT ENGINEERING</span><h2>Prompt Lab</h2><p>Demonstrate how better prompts produce more useful and consistent results.</p></div>
+  <div class="prompt-grid"><div class="box"><h3>The 5-part framework</h3><div class="steps"><div><b>01 · ROLE</b><span>Tell the AI who it should act as.</span></div><div><b>02 · CONTEXT</b><span>Supply relevant background and audience.</span></div><div><b>03 · TASK</b><span>Clearly define the desired action.</span></div><div><b>04 · CONSTRAINTS</b><span>Set tone, length, rules and limitations.</span></div><div><b>05 · OUTPUT</b><span>Specify the exact format required.</span></div></div></div>
+  <div class="box"><h3>Prompt refinement example</h3><div class="prompt bad"><small>WEAK PROMPT</small><p>Write an email asking for more time.</p></div><div class="arrow">↓ refine with structure ↓</div><div class="prompt good"><small>STRUCTURED PROMPT</small><p><b>Role:</b> Professional workplace communication assistant.<br><b>Context:</b> Project dependency is delayed.<br><b>Task:</b> Request a 2-day extension from the manager.<br><b>Constraints:</b> Accountable, concise, respectful.<br><b>Output:</b> Subject + 3 short paragraphs + proposed date.</p></div></div></div>
+</section>
+
+<section class="page" id="responsible">
+  <div class="page-head"><span class="tag">RESPONSIBLE AI</span><h2>Responsible AI by design</h2><p>AI should assist human judgment, not replace it.</p></div>
+  <div class="risk-grid"><div class="risk"><i>⚠</i><h3>Hallucinations</h3><p>AI can produce incorrect or invented information. Verify important facts.</p></div><div class="risk"><i>◌</i><h3>Bias</h3><p>Review outputs for unfair assumptions, stereotypes and inappropriate recommendations.</p></div><div class="risk"><i>🔒</i><h3>Privacy</h3><p>Never paste confidential or sensitive workplace information unless authorized.</p></div><div class="risk"><i>✓</i><h3>Human validation</h3><p>Review AI-generated content before sending, publishing or making decisions.</p></div></div>
+  <div class="warning"><b>Prototype disclaimer</b><p>This application uses local deterministic demo logic. It demonstrates the AI workflow and prompt-engineering concepts without pretending that simulated responses are live external AI. A production deployment should connect an approved AI provider through a secure server-side API.</p></div>
+</section>
+
+<section class="page" id="project">
+  <div class="page-head"><span class="tag">CAPACITI SUBMISSION</span><h2>Project & Documentation</h2><p>Everything needed to explain the solution during your presentation.</p></div>
+  <div class="docs"><div class="box"><h3>Problem statement</h3><p>Professionals spend significant time on repetitive tasks such as drafting emails, summarizing information, planning schedules and conducting research. WorkMate AI consolidates these workflows into one productivity assistant.</p></div><div class="box"><h3>Solution overview</h3><p>A browser-based workplace co-pilot with five task-focused tools, reusable prompt structures and responsible-AI safeguards.</p></div><div class="box"><h3>Technology</h3><p><b>HTML</b> for structure · <b>CSS</b> for responsive UI · <b>JavaScript</b> for application logic, state, parsing, local storage and interactions.</p></div><div class="box"><h3>Production upgrade</h3><p>Connect the same interface to an approved LLM through a secure backend. Keep API keys server-side, validate inputs and log usage safely.</p></div></div>
+  <div class="box checklist"><h3>Demo checklist</h3><label><input type="checkbox"> Demonstrate email generation</label><label><input type="checkbox"> Summarize sample meeting notes</label><label><input type="checkbox"> Build a task plan</label><label><input type="checkbox"> Analyze a research topic</label><label><input type="checkbox"> Chat with WorkMate</label><label><input type="checkbox"> Explain the 5-part prompt framework</label><label><input type="checkbox"> Explain responsible AI safeguards</label></div>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
